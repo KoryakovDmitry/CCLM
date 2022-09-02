@@ -132,7 +132,7 @@ def run_nlvr2(args, load_nlvr_pretrain=False):
 def run_itr_flickr(args):
     dist_launch = get_dist_launch(args)
 
-    assert os.path.exists("images/flickr30k-images")
+    # assert os.path.exists("images/flickr30k-images")
 
     if not os.path.exists(args.config): args.config = f"configs/{args.model}/Retrieval_multi30k_all_ft.yaml"
 
