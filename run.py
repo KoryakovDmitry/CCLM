@@ -32,7 +32,10 @@ def get_nnodes(args):  # when using only part of nodes
 
 
 def get_dist_launch(args):  # some examples
-    if args.dist == 'all':  # use all nodes
+    if args.dist == "no":
+        return "python3"
+
+    elif args.dist == 'all':  # use all nodes
         return "python3 -m torch.distributed.launch --nproc_per_node={:} " \
                "--nnodes={:} --node_rank={:} --master_addr={:} --master_port={:}".format(
             NPROC_PER_NODE, NNODES, NODE_RANK, MASTER_ADDR, MASTER_PORT)
